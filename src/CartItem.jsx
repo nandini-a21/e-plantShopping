@@ -31,8 +31,9 @@ const handleCheckoutShopping = (e) => {
   };
 
   const handleDecrement = (item) => {
+    if(item.quantity>0){
     dispatch(updateQuantity({ name: item.name, quantity: item.quantity - 1 }));
-  };
+  }};
 
   const handleRemove = (item) => {
     dispatch(removeItem(item.name));
@@ -76,7 +77,7 @@ const handleCheckoutShopping = (e) => {
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
         <br />
-        <button className="get-started-button1">Checkout</button>
+        <button className="get-started-button1" onClick={handleCheckoutShopping}>Checkout</button>
       </div>
     </div>
   );
