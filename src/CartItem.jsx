@@ -40,16 +40,15 @@ const handleCheckoutShopping = (e) => {
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
-     let total = 0;
+     
 
-  cart.forEach(item => {
+  
     const unitPrice = parseFloat(item.cost.substring(1)); // remove $ sign
     const itemTotal = unitPrice * item.quantity;
-    total += itemTotal;
-  });
+    return itemTotal;
+  };
 
-  return total; // returns string like "25.00"
-}
+  
   
 
   return (
